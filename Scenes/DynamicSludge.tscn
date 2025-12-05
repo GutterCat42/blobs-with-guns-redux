@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Lava.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/FluidBody.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1600, 499.5 )
+
+[node name="DynamicSludge" type="Area2D"]
+script = ExtResource( 1 )
+speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 500 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="FluidBody" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1600, 0 )
+numSprings = 100
+
+[connection signal="body_entered" from="." to="." method="_on_Lava_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

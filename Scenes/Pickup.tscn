@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Pickup.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/grenade dummy(1).png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Projectiles/HandGrenade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/roundlight.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.413408, 1 )
+colors = PoolColorArray( 0, 1, 0.0470588, 0, 0, 1, 0.0470588, 0.117647, 1, 1, 1, 0 )
+
+[node name="Pickup" type="Area2D" groups=["Pickup"]]
+script = ExtResource( 1 )
+item = ExtResource( 3 )
+tex = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 5
+amount = 20
+lifetime = 10.0
+preprocess = 2.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+orbit_velocity_random = 0.42
+scale_amount = 5.0
+scale_amount_random = 0.5
+color_ramp = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+texture_scale = 0.1
+color = Color( 0, 1, 0.0470588, 1 )
+shadow_enabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_Pickup_body_entered"]

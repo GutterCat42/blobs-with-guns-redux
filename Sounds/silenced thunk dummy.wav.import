@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/silenced thunk dummy.wav-d18aa23e417be9830b7ccb2eef9ecc7f.sample"
+
+[deps]
+
+source_file="res://Sounds/silenced thunk dummy.wav"
+dest_files=[ "res://.import/silenced thunk dummy.wav-d18aa23e417be9830b7ccb2eef9ecc7f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

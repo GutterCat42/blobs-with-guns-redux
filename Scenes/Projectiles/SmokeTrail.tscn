@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/SmokeTrail.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/linear double gradient.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+max_value = 2.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0903663, 0, 0, Vector2( 1, 2 ), 5.61581, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.805556, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 0.71875, 0.71875, 0.71875, 0.933333, 1, 0.490875, 0.214844, 1 )
+
+[node name="SmokeTrail" type="Line2D"]
+width = 2.0
+width_curve = SubResource( 1 )
+gradient = SubResource( 2 )
+texture = ExtResource( 2 )
+texture_mode = 2
+joint_mode = 2
+script = ExtResource( 1 )

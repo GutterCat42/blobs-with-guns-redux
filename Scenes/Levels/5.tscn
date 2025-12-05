@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/RicochetWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Blobs/BadBlob.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Guns/Uzi.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Lights/HangingBulb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/HintLabel.tscn" type="PackedScene" id=6]
+
+[node name="5" instance=ExtResource( 1 )]
+
+[node name="LevelEnd" parent="." index="0"]
+position = Vector2( 1298, -156 )
+scale = Vector2( 21.8, 7.28 )
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( -524284, 6, 1, -524283, 6, 1, -524282, 6, 1, -524281, 6, 1, -524280, 6, 1, -524279, 6, 1, -524278, 6, 1, -524277, 6, 1, -524276, 6, 1, -524275, 6, 1, -524274, 6, 1, -524273, 6, 1, -524272, 6, 1, -524271, 6, 1, -524270, 6, 1, -524269, 6, 1, -524268, 6, 1, -524267, 6, 1, -524266, 6, 1, -524265, 6, 1, -524264, 6, 1, -524263, 6, 1, -524262, 6, 1, -524261, 6, 1, -524260, 6, 1, -524259, 6, 1, -524258, 6, 1, -524257, 6, 1, -524256, 6, 1, -524255, 6, 1, -524254, 6, 1, -524253, 6, 1, -524252, 6, 1, -524251, 6, 1, -524250, 6, 1, -524249, 6, 1, -524248, 6, 1, -524247, 6, 1, -524246, 6, 1, -524245, 6, 1, -524244, 6, 1, -524243, 6, 1, -524242, 6, 1, -524241, 6, 1, -458748, 6, 1, -458736, 6, 1, -458705, 6, 0, -393212, 6, 1, -393205, 6, 1, -393200, 6, 1, -393169, 6, 0, -327676, 6, 1, -327670, 6, 1, -327669, 6, 1, -327668, 6, 1, -327664, 6, 1, -327656, 6, 1, -327655, 6, 1, -327654, 6, 1, -327633, 6, 0, -196627, 6, 1, -196626, 6, 1, -196625, 6, 1, -196624, 6, 1, -196623, 6, 1, -196622, 6, 1, -196621, 6, 1, -196620, 6, 1, -196619, 6, 1, -196618, 6, 1, -196617, 6, 1, -196616, 6, 1, -196615, 6, 1, -196614, 6, 1, -196613, 6, 1, -196612, 6, 1, -196611, 6, 1, -196610, 6, 1, -196609, 6, 1, -262144, 6, 1, -262143, 6, 1, -262142, 6, 1, -262141, 6, 1, -262140, 6, 1, -262134, 6, 1, -262128, 6, 1, -262118, 6, 1, -262097, 6, 0, -131091, 6, 0, -196604, 6, 1, -196598, 6, 1, -196592, 6, 1, -196585, 6, 1, -196582, 6, 1, -196581, 6, 1, -196580, 6, 1, -196579, 6, 1, -196578, 6, 1, -196577, 6, 1, -196576, 6, 1, -196575, 6, 1, -196574, 6, 1, -196573, 6, 1, -196572, 6, 1, -196571, 6, 1, -196570, 6, 1, -196569, 6, 1, -196568, 6, 1, -196567, 6, 1, -196566, 6, 1, -196565, 6, 1, -196564, 6, 1, -196563, 6, 1, -196562, 6, 1, -196561, 6, 1, -65555, 6, 0, -131068, 6, 1, -131067, 6, 1, -131066, 6, 1, -131062, 6, 1, -131061, 6, 1, -131060, 6, 1, -131056, 6, 1, -131052, 6, 1, -131051, 6, 1, -131050, 6, 1, -131049, 6, 1, -131046, 6, 1, -19, 6, 0, -65526, 6, 1, -65510, 6, 1, 65517, 6, 0, 10, 6, 1, 26, 6, 1, 131053, 6, 1, 131054, 6, 1, 131055, 6, 1, 131056, 6, 1, 131057, 6, 1, 131058, 6, 1, 131059, 6, 1, 131060, 6, 1, 131061, 6, 1, 131062, 6, 1, 131063, 6, 1, 131064, 6, 1, 131065, 6, 1, 131066, 6, 1, 131067, 6, 1, 131068, 6, 1, 131069, 6, 1, 131070, 6, 1, 131071, 6, 1, 65536, 6, 1, 65537, 6, 1, 65538, 6, 1, 65539, 6, 1, 65540, 6, 1, 65541, 6, 1, 65542, 6, 1, 65543, 6, 1, 65544, 6, 1, 65545, 6, 1, 65546, 6, 1, 65547, 6, 1, 65548, 6, 1, 65549, 6, 1, 65550, 6, 1, 65551, 6, 1, 65552, 6, 1, 65553, 6, 1, 65554, 6, 1, 65555, 6, 1, 65556, 6, 1, 65557, 6, 1, 65558, 6, 1, 65559, 6, 1, 65560, 6, 1, 65561, 6, 1, 65562, 6, 1 )
+
+[node name="BadBlob" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 208, -74 )
+Gun = ExtResource( 4 )
+
+[node name="BadBlob2" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 378, -93 )
+Gun = ExtResource( 4 )
+
+[node name="BadBlob3" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 846, -174 )
+Gun = ExtResource( 4 )
+
+[node name="RicochetWall" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 537, -144 )
+rotation = 3.14159
+scale = Vector2( 1, 6.68 )
+
+[node name="RicochetWall4" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 784, -233 )
+rotation = 4.71238
+scale = Vector2( 1, 5.36 )
+
+[node name="RicochetWall2" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 240, -231 )
+rotation = -1.57079
+
+[node name="RicochetWall5" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 409, -143 )
+rotation = -3.14159
+
+[node name="RicochetWall6" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 345, -95 )
+rotation = -3.14159
+scale = Vector2( 1, 2.52 )
+
+[node name="RicochetWall7" parent="." index="13" instance=ExtResource( 2 )]
+position = Vector2( 384, -137 )
+rotation = -1.57079
+scale = Vector2( 1, 2.52 )
+
+[node name="RicochetWall8" parent="." index="14" instance=ExtResource( 2 )]
+position = Vector2( 376, -53 )
+rotation = 1.57079
+scale = Vector2( 1, 2.52 )
+
+[node name="RicochetWall3" parent="." index="15" instance=ExtResource( 2 )]
+position = Vector2( 517, -123 )
+scale = Vector2( 1, 5.68 )
+
+[node name="HangingBulb" parent="." index="16" instance=ExtResource( 5 )]
+position = Vector2( 464, -228 )
+
+[node name="HintLabel" parent="." index="17" instance=ExtResource( 6 )]
+margin_left = 137.0
+margin_top = -29.0
+margin_right = 327.0
+margin_bottom = 44.0
+text = "Try shooting at shiny panels (look up)"

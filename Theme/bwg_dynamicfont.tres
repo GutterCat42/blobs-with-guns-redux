@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=3 format=2]
+
+[ext_resource path="res://Theme/BWG (2).ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Theme/BWG.ttf"
+
+[resource]
+font_data = ExtResource( 1 )
+fallback/0 = SubResource( 1 )

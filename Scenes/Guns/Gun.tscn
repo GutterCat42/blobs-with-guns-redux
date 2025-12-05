@@ -1,0 +1,185 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Gun.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/pistol dummy.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/muzzle flash dummy.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/roundlight.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/shoot dummy.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/dry fire.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/new shotty reload.wav" type="AudioStream" id=7]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 4.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "Equip"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fire"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.04, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -2, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.04, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -15.27, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -720.0 ]
+}
+
+[node name="Gun" type="Node2D"]
+z_index = 5
+script = ExtResource( 1 )
+
+[node name="AnimNode" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="AnimNode"]
+texture = ExtResource( 2 )
+
+[node name="BarrelEnd" type="Node2D" parent="AnimNode/Sprite"]
+position = Vector2( 4, -2 )
+
+[node name="MuzzleFlash" type="Sprite" parent="AnimNode/Sprite/BarrelEnd"]
+visible = false
+position = Vector2( 6, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="MuzzleFlashTimer" type="Timer" parent="AnimNode/Sprite/BarrelEnd/MuzzleFlash"]
+wait_time = 0.05
+
+[node name="Light2D" type="Light2D" parent="AnimNode/Sprite/BarrelEnd/MuzzleFlash"]
+texture = ExtResource( 4 )
+texture_scale = 2.0
+color = Color( 1, 0.560784, 0, 1 )
+energy = 2.5
+shadow_enabled = true
+shadow_gradient_length = 0.5
+
+[node name="ShellPoint" type="Node2D" parent="AnimNode/Sprite"]
+position = Vector2( -1, -3 )
+
+[node name="Shield" type="StaticBody2D" parent="AnimNode/Sprite"]
+position = Vector2( 9, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimNode/Sprite/Shield"]
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimNode")
+anims/Equip = SubResource( 4 )
+anims/Fire = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+anims/Reload = SubResource( 3 )
+
+[node name="FiringTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="FiringSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="AmmoEmptySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+pitch_scale = 1.3
+attenuation = 1.56917
+bus = "SFX"
+
+[connection signal="timeout" from="AnimNode/Sprite/BarrelEnd/MuzzleFlash/MuzzleFlashTimer" to="." method="_on_MuzzleFlashTimer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="FiringTimer" to="." method="_on_FiringTimer_timeout"]

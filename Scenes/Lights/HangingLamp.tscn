@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Lights/CableSegment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Lights/LampShade.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.0
+
+[node name="HangingLamp" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("..")
+node_b = NodePath("../CableSegment")
+softness = 5.0
+
+[node name="CableSegment" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 7 )
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2( 0, 14 )
+node_a = NodePath("../CableSegment")
+node_b = NodePath("../CableSegment2")
+softness = 5.0
+
+[node name="CableSegment2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 21 )
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2( 0, 28 )
+node_a = NodePath("../CableSegment2")
+node_b = NodePath("../CableSegment3")
+softness = 5.0
+
+[node name="CableSegment3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 35 )
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2( 0, 42 )
+node_a = NodePath("../CableSegment3")
+node_b = NodePath("../LampShade")
+softness = 5.0
+
+[node name="LampShade" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 42 )

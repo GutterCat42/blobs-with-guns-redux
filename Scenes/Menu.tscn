@@ -1,0 +1,397 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Music/menu intro.wav" type="AudioStream" id=1]
+[ext_resource path="res://Theme/BlobsTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Music/menu loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/menubg.png" type="Texture" id=5]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -580, -152 )
+theme = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 563, 275 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_left = 514.0
+margin_top = 47.0
+margin_right = 673.0
+margin_bottom = 63.0
+rect_scale = Vector2( 5, 5 )
+text = "BLOBS WITH GUNS"
+align = 1
+
+[node name="VersionLabel" type="Label" parent="."]
+anchor_left = 0.376
+anchor_top = 0.512
+anchor_right = 0.49
+anchor_bottom = 0.534
+margin_left = 0.0799561
+margin_top = 0.039978
+margin_right = -72.8
+margin_bottom = -9.72003
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "REDUX V1"
+align = 1
+valign = 1
+
+[node name="MenuStack" type="VBoxContainer" parent="."]
+anchor_left = 0.335
+anchor_top = 0.763
+anchor_right = 0.66
+anchor_bottom = 0.983
+margin_left = -58.04
+margin_top = -281.8
+margin_right = -209.84
+margin_bottom = -309.8
+rect_scale = Vector2( 3, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MenuStack"]
+margin_top = 46.0
+margin_right = 472.0
+margin_bottom = 62.0
+text = "PLAY LEVELS"
+
+[node name="SpeedrunButton" type="Button" parent="MenuStack"]
+margin_top = 66.0
+margin_right = 472.0
+margin_bottom = 82.0
+text = "START GENOCIDE SPEEDRUN"
+
+[node name="GenerateButton" type="Button" parent="MenuStack"]
+margin_top = 86.0
+margin_right = 472.0
+margin_bottom = 102.0
+text = "GENERATE LEVEL"
+
+[node name="StatsButton" type="Button" parent="MenuStack"]
+margin_top = 106.0
+margin_right = 472.0
+margin_bottom = 122.0
+text = "STATS"
+
+[node name="CreditsButton" type="Button" parent="MenuStack"]
+margin_top = 126.0
+margin_right = 472.0
+margin_bottom = 142.0
+text = "CREDITS"
+
+[node name="ExitButton" type="Button" parent="MenuStack"]
+margin_top = 146.0
+margin_right = 472.0
+margin_bottom = 162.0
+text = "EXIT"
+
+[node name="LevelOptions" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.335
+anchor_top = 0.763
+anchor_right = 0.66
+anchor_bottom = 0.983
+margin_left = -341.04
+margin_top = 110.2
+margin_right = -484.84
+margin_bottom = 46.2
+rect_scale = Vector2( 3, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LevelSelect" type="HBoxContainer" parent="LevelOptions"]
+margin_right = 189.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="LevelDownButton" type="Button" parent="LevelOptions/LevelSelect"]
+margin_right = 8.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "<"
+flat = true
+
+[node name="ConfirmPlayButton" type="Button" parent="LevelOptions/LevelSelect"]
+margin_left = 12.0
+margin_right = 177.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PLAY LEVEL 1"
+flat = true
+
+[node name="LevelUpButton" type="Button" parent="LevelOptions/LevelSelect"]
+margin_left = 181.0
+margin_right = 189.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = ">"
+flat = true
+
+[node name="ScoreLabel" type="Label" parent="LevelOptions"]
+margin_top = 36.0
+margin_right = 189.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Best score:"
+align = 1
+valign = 1
+
+[node name="TimeLabel" type="Label" parent="LevelOptions"]
+margin_top = 54.0
+margin_right = 189.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Best Time:"
+align = 1
+valign = 1
+
+[node name="MainButton" type="Button" parent="."]
+visible = false
+margin_left = 397.0
+margin_top = 549.0
+margin_right = 493.0
+margin_bottom = 563.0
+rect_scale = Vector2( 3, 3 )
+text = "BACK TO MAIN"
+
+[node name="GenerateOptions" type="VBoxContainer" parent="."]
+visible = false
+margin_left = -239.0
+margin_top = 170.0
+margin_right = -39.0
+margin_bottom = 596.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeSelect" type="OptionButton" parent="GenerateOptions"]
+margin_right = 213.0
+margin_bottom = 16.0
+text = "Theme:"
+flat = true
+
+[node name="HPSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 20.0
+margin_right = 213.0
+margin_bottom = 46.0
+min_value = 1.0
+value = 3.0
+allow_greater = true
+prefix = "Starting player HP:"
+
+[node name="WidthSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 50.0
+margin_right = 213.0
+margin_bottom = 76.0
+min_value = 1.0
+value = 30.0
+allow_greater = true
+suffix = "wide"
+
+[node name="HeightSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 80.0
+margin_right = 213.0
+margin_bottom = 106.0
+min_value = 1.0
+value = 20.0
+allow_greater = true
+suffix = "tall"
+
+[node name="PlatformsSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 110.0
+margin_right = 213.0
+margin_bottom = 136.0
+max_value = 50.0
+value = 20.0
+allow_greater = true
+suffix = "platforms"
+
+[node name="MinWidthSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 140.0
+margin_right = 213.0
+margin_bottom = 166.0
+min_value = 1.0
+max_value = 20.0
+value = 2.0
+allow_greater = true
+prefix = "Min platform width:"
+
+[node name="MaxWidthSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 170.0
+margin_right = 213.0
+margin_bottom = 196.0
+min_value = 1.0
+max_value = 20.0
+value = 8.0
+allow_greater = true
+prefix = "Max platform width:"
+
+[node name="WallsSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 200.0
+margin_right = 213.0
+margin_bottom = 226.0
+max_value = 50.0
+value = 10.0
+allow_greater = true
+suffix = "walls"
+
+[node name="EnemiesSelect" type="SpinBox" parent="GenerateOptions"]
+margin_top = 230.0
+margin_right = 213.0
+margin_bottom = 256.0
+max_value = 50.0
+value = 20.0
+allow_greater = true
+suffix = "enemies"
+
+[node name="PistolSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 260.0
+margin_right = 213.0
+margin_bottom = 292.0
+pressed = true
+text = "Pistols"
+
+[node name="UziSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 296.0
+margin_right = 213.0
+margin_bottom = 328.0
+pressed = true
+text = "Uzis"
+
+[node name="ShottySelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 332.0
+margin_right = 213.0
+margin_bottom = 364.0
+pressed = true
+text = "Shotguns"
+
+[node name="SilencedPistolSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 368.0
+margin_right = 213.0
+margin_bottom = 400.0
+pressed = true
+text = "Silenced pistols"
+
+[node name="SniperSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 404.0
+margin_right = 213.0
+margin_bottom = 436.0
+pressed = true
+text = "Sniper rifles"
+
+[node name="AssaultRifleSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 440.0
+margin_right = 213.0
+margin_bottom = 472.0
+pressed = true
+text = "Assault rifles"
+
+[node name="GrenadeLauncherSelect" type="CheckButton" parent="GenerateOptions"]
+margin_top = 476.0
+margin_right = 213.0
+margin_bottom = 508.0
+pressed = true
+text = "Grenade launchers"
+
+[node name="DropHint" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 633.0
+margin_right = 357.0
+margin_bottom = 668.0
+text = "You have selected more than six guns and may need to press Q to drop a weapon."
+autowrap = true
+
+[node name="ConfirmGenerateButton" type="Button" parent="."]
+visible = false
+margin_left = -86.0
+margin_top = 535.0
+margin_right = 114.0
+margin_bottom = 549.0
+rect_scale = Vector2( 3, 3 )
+text = "GENERATE & PLAY"
+
+[node name="CreditsLabel" type="Label" parent="."]
+visible = false
+margin_left = 1054.0
+margin_top = 133.0
+margin_right = 1103.0
+margin_bottom = 164.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Created by GutterCat42
+With help from
+Novak
+Ibs
+
+Additional support from
+Joosh
+Rhymond (first person to complete the game without touching grass)
+[REDACTED] M5Fz2tYPBUAHZO9qEwBTLNBfB1SbR1+FtauHcbXFQ6KNjBFHObXTgzMf1eiuEp12 [REDACTED]
+PickledPie
+Potatcat/Eggling
+BakedBeanz27
+Ant-Man
+Infiniti
+sniffi07
+
+Special thanks to eggs, they helped me a dozen
+
+Enjoy the game :)"
+align = 1
+
+[node name="StatsLabel" type="Label" parent="."]
+visible = false
+margin_left = 1183.0
+margin_top = 574.0
+margin_right = 1223.0
+margin_bottom = 605.0
+rect_scale = Vector2( 2, 2 )
+text = "STATS:
+
+Total playtime:
+Total trick score:
+Total kills:
+Total deaths:
+Kill-death ratio:"
+align = 1
+
+[node name="MenuIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "Music"
+
+[node name="MenuLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[connection signal="resized" from="." to="." method="_on_Menu_resized"]
+[connection signal="pressed" from="MenuStack/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="MenuStack/SpeedrunButton" to="." method="_on_SpeedrunButton_pressed"]
+[connection signal="pressed" from="MenuStack/GenerateButton" to="." method="_on_GenerateButton_pressed"]
+[connection signal="pressed" from="MenuStack/StatsButton" to="." method="_on_StatsButton_pressed"]
+[connection signal="pressed" from="MenuStack/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="MenuStack/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="LevelOptions/LevelSelect/LevelDownButton" to="." method="_on_LevelDownButton_pressed"]
+[connection signal="pressed" from="LevelOptions/LevelSelect/ConfirmPlayButton" to="." method="_on_ConfirmPlayButton_pressed"]
+[connection signal="pressed" from="LevelOptions/LevelSelect/LevelUpButton" to="." method="_on_LevelUpButton_pressed"]
+[connection signal="pressed" from="MainButton" to="." method="_on_MainButton_pressed"]
+[connection signal="pressed" from="ConfirmGenerateButton" to="." method="_on_ConfirmGenerateButton_pressed"]
+[connection signal="finished" from="MenuIntro" to="." method="_on_MenuIntro_finished"]

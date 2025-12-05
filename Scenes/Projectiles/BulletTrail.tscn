@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.384314, 0.384314, 0.384314, 0.52549, 1, 1, 1, 0 )
+
+[node name="BulletTrail" type="CPUParticles2D"]
+amount = 1000
+lifetime = 5.0
+lifetime_randomness = 0.5
+local_coords = false
+direction = Vector2( -1, 0 )
+spread = 5.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 40.0
+angular_velocity_random = 1.0
+scale_amount = 5.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 2 )

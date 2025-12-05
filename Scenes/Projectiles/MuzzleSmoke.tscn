@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/BlobSpray.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0837989, 0.463687, 0.994413, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.513726, 0, 0.686275, 0.742188, 0.742188, 0.742188, 0.54902, 0.636719, 0.636719, 0.636719, 0, 0.290196, 0.290196, 0.290196, 0 )
+
+[node name="MuzzleSmoke" type="CPUParticles2D"]
+emitting = false
+amount = 700
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.42
+local_coords = false
+spread = 0.5
+gravity = Vector2( 0, 0 )
+initial_velocity = 500.0
+initial_velocity_random = 1.0
+angular_velocity = 400.0
+angular_velocity_random = 1.0
+scale_amount = 2.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

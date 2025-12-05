@@ -1,0 +1,48 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform vec2 scale;
+uniform float y_zoom;
+uniform vec4 water_color : hint_color;
+uniform sampler2D noise;
+uniform vec2 distortion_scale;
+uniform float intensity;
+uniform float speed;
+uniform float wave_amplitude;
+uniform float wave_speed;
+uniform float wave_period;
+
+void fragment() {
+	float waves  = UV.y * scale.y + sin(UV.x * scale.x / wave_period - TIME * wave_speed) * cos(0.2 * UV.x * scale.x / wave_period + TIME - wave_speed) * wave_amplitude - wave_amplitude;
+	
+	float distortion = texture(noise, UV * scale * distortion_scale + TIME * speed).x;
+	distortion -= 0.5;
+	
+	float uv_height = SCREEN_PIXEL_SIZE.y / TEXTURE_PIXEL_SIZE.y;
+	vec2 reflected_screenuv = vec2(SCREEN_UV.x - distortion * intensity * y_zoom, SCREEN_UV.y + uv_height * UV.y * scale.y * y_zoom * 2.0);
+	
+	vec4 reflection = texture(SCREEN_TEXTURE, reflected_screenuv);
+	COLOR.rgb = mix(reflection.rgb, water_color.rgb, water_color.a);
+	COLOR.a = smoothstep(0.1, 0.13, waves);
+}"
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=8]
+seamless = true
+noise = SubResource( 7 )
+
+[resource]
+shader = SubResource( 5 )
+shader_param/scale = Vector2( 100, 1000 )
+shader_param/y_zoom = 1.0
+shader_param/water_color = Color( 0.0941176, 0.207843, 0.027451, 0.784314 )
+shader_param/distortion_scale = Vector2( 0.535, 0.16 )
+shader_param/intensity = 2.0
+shader_param/speed = 2.0
+shader_param/wave_amplitude = 1.463
+shader_param/wave_speed = 3.53
+shader_param/wave_period = 0.379
+shader_param/noise = SubResource( 8 )

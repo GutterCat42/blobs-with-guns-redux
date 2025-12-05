@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/LaserPointer.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/lampshape.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/roundlight.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.984293 )
+colors = PoolColorArray( 1, 0, 0, 0.388235, 1, 0, 0, 0 )
+
+[node name="LaserPointer" type="RayCast2D"]
+cast_to = Vector2( 600, 0 )
+collision_mask = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 100, 0 )
+width = 1.0
+default_color = Color( 1, 1, 1, 1 )
+gradient = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 187, 1 )
+rotation = -1.5708
+scale = Vector2( 0.1, 1 )
+texture = ExtResource( 2 )
+color = Color( 1, 0, 0, 1 )
+energy = 2.0
+shadow_enabled = true
+
+[node name="DotLight" type="Light2D" parent="."]
+position = Vector2( 596, 0 )
+texture = ExtResource( 3 )
+texture_scale = 0.05
+color = Color( 1, 0, 0, 1 )
+shadow_enabled = true

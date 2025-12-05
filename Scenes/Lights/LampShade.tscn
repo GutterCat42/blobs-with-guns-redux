@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/lights.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/lampshape.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/LampShade.gd" type="Script" id=3]
+
+[node name="LampShade" type="RigidBody2D" groups=["CanSquash", "Hitable"]]
+contact_monitor = true
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 0
+position = Vector2( 1, 7 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 3
+frame = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 2, -1, 9, 6, 5, 11, -5, 11, -9, 6, -2, -1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -9, 189 )
+texture = ExtResource( 2 )
+energy = 1.5
+shadow_enabled = true
+shadow_gradient_length = 0.3

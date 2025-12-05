@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Guns/Pistol.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/silenced pistol dummy.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/silenced thunk dummy.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Guns/LaserPointer.tscn" type="PackedScene" id=4]
+
+[node name="SilencedPistol" instance=ExtResource( 1 )]
+recoil = 50.0
+pitchVariation = 0.1
+silenced = true
+
+[node name="Sprite" parent="AnimNode" index="0"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 2 )
+
+[node name="LaserPointer" parent="AnimNode/Sprite" index="0" instance=ExtResource( 4 )]
+position = Vector2( -2, 0 )
+
+[node name="BarrelEnd" parent="AnimNode/Sprite" index="1"]
+position = Vector2( 7, -2 )
+
+[node name="Light2D" parent="AnimNode/Sprite/BarrelEnd/MuzzleFlash" index="1"]
+texture_scale = 3.0
+
+[node name="ShellPoint" parent="AnimNode/Sprite" index="2"]
+position = Vector2( -4, -3 )
+
+[node name="FiringSound" parent="." index="3"]
+stream = ExtResource( 3 )
