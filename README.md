@@ -20,3 +20,5 @@ This version uses Godot 3.4.2. Some things break when using newer versions so I'
 * Balanced guns
 * Fixed bullets getting stuck in ricochet walls
 * Decrease focus intensity
+* Edited level 9
+* Edited bossfight (level 10)

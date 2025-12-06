@@ -6,7 +6,7 @@
 
 [node name="Sniper" instance=ExtResource( 2 )]
 rps = 2.0
-recoil = 300.0
+recoil = 200.0
 bulletSpeed = 2000.0
 bulletDamage = 3.0
 finalBulletDamage = 2.0

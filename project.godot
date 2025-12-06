@@ -10,13 +10,15 @@ config_version=4
 
 [application]
 
-config/name="Blobs With Guns"
+config/name="Blobs With Guns: Redux"
 run/main_scene="res://Scenes/Menu.tscn"
 boot_splash/image="res://Sprites/gutter cat with a gun.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.113725, 0.611765, 0.941176, 1 )
 config/icon="res://Theme/Blobs_guns_thumbnail.png"
+config/macos_native_icon="res://Theme/Blobs_guns_thumbnail.png"
+config/windows_native_icon="res://Theme/Blobs_guns_thumbnail.png"
 
 [autoload]
 

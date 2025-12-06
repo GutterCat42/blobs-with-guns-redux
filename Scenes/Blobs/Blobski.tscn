@@ -14,9 +14,10 @@ contacts_reported = 4
 contact_monitor = true
 script = ExtResource( 2 )
 Gun = ExtResource( 3 )
+fireThresh = 30.0
 hp = 242.0
 baseScore = 4200
-shootyTimerTime = 1.2
+shootyTimerTime = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2( 5, 5 )
