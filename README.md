@@ -1,6 +1,8 @@
 # Blobs With Guns: Redux
 
-It's my second game, Blobs with Guns, but with a bunch of changes and optimisations to make it playable and remove bloat. Basically, the ideal way to experience the original game.
+It's my second game, Blobs with Guns, but with a drastic file size reduction and other minor updates to improve the experience. There are few new features added, and those that are added are very minor additions that were already half implemented in the original. Other quality-of-life refinements, some bug fixes, balancing, and visual/audio improvements have been made too, however not many code optimisations have been made. However, the experience is still closely aligned with the original.
+
+In short, this is the original game but finally somewhat optimised and cleaned up just a tad, making it the ideal way to experience the classic Blobs With Guns.
 
 This version uses Godot 3.4.2. Some things break when using newer versions so I've just kept it here.
 
