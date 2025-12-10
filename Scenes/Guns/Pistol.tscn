@@ -5,4 +5,4 @@
 [node name="Pistol" instance=ExtResource( 1 )]
 rps = 15.0
 bulletInaccuracy = 0.3
-bulletRange = 600.0
+bulletRange = 500.0

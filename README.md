@@ -6,6 +6,8 @@ In short, this is the original game but finally somewhat optimised and cleaned u
 
 This version uses Godot 3.4.2. Some things break when using newer versions so I've just kept it here.
 
+NOTE: when exporting from godot, be sure to exclude the entire Assets folder. (The Builds folder should automatically be excluded too).
+
 
 
 ## Rough changelog
@@ -24,4 +26,5 @@ This version uses Godot 3.4.2. Some things break when using newer versions so I'
 * Decrease focus intensity
 * Edited level 9
 * Edited bossfight (level 10)
-*	Add additional music
+* Add additional music
+* Fix bullet spawning bug in level 8

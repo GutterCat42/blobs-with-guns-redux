@@ -35,10 +35,11 @@ seamless = true
 noise = SubResource( 7 )
 
 [resource]
+render_priority = 2
 shader = SubResource( 5 )
 shader_param/scale = Vector2( 100, 1000 )
 shader_param/y_zoom = 1.0
-shader_param/water_color = Color( 0.0941176, 0.207843, 0.027451, 0.784314 )
+shader_param/water_color = Color( 0.176471, 0.345098, 0.0196078, 0.847059 )
 shader_param/distortion_scale = Vector2( 0.535, 0.16 )
 shader_param/intensity = 2.0
 shader_param/speed = 2.0
