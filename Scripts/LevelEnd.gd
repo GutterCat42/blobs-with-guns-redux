@@ -21,7 +21,7 @@ func end():
 			Globals.levelTimes.append(get_parent().time)
 		
 		
-		if int(get_parent().name) == Globals.unlockedLevel and int(get_parent().name) < 11:
+		if int(get_parent().name) == Globals.unlockedLevel and int(get_parent().name) < 10:
 			Globals.unlockedLevel += 1
 			Globals.lastPlayed = Globals.unlockedLevel
 	

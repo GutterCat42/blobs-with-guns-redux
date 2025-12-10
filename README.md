@@ -28,3 +28,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder. (T
 * Edited bossfight (level 10)
 * Add additional music
 * Fix bullet spawning bug in level 8
+* Properly removed the cut level 11

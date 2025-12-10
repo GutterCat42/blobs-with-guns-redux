@@ -110,23 +110,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LevelSelect" type="HBoxContainer" parent="LevelOptions"]
-margin_right = 189.0
-margin_bottom = 32.0
+margin_right = 480.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="LevelDownButton" type="Button" parent="LevelOptions/LevelSelect"]
-margin_right = 8.0
-margin_bottom = 32.0
+margin_right = 10.0
+margin_bottom = 133.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "<"
 flat = true
 
 [node name="ConfirmPlayButton" type="Button" parent="LevelOptions/LevelSelect"]
-margin_left = 12.0
-margin_right = 177.0
-margin_bottom = 32.0
+margin_left = 14.0
+margin_right = 466.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -134,17 +134,17 @@ text = "PLAY LEVEL 1"
 flat = true
 
 [node name="LevelUpButton" type="Button" parent="LevelOptions/LevelSelect"]
-margin_left = 181.0
-margin_right = 189.0
-margin_bottom = 32.0
+margin_left = 470.0
+margin_right = 480.0
+margin_bottom = 133.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = ">"
 flat = true
 
 [node name="ScoreLabel" type="Label" parent="LevelOptions"]
-margin_top = 36.0
-margin_right = 189.0
-margin_bottom = 50.0
+margin_top = 137.0
+margin_right = 480.0
+margin_bottom = 153.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -153,9 +153,9 @@ align = 1
 valign = 1
 
 [node name="TimeLabel" type="Label" parent="LevelOptions"]
-margin_top = 54.0
-margin_right = 189.0
-margin_bottom = 68.0
+margin_top = 157.0
+margin_right = 480.0
+margin_bottom = 173.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
