@@ -381,6 +381,7 @@ margin_bottom = 75.0
 text = "QUIT TO MENU"
 
 [node name="FPSLabel" type="Label" parent="."]
+visible = false
 margin_left = -557.0
 margin_top = -304.0
 margin_right = -517.0
