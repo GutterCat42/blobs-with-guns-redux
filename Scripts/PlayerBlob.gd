@@ -170,7 +170,8 @@ func _ready():
 
 
 func _physics_process(_delta):
-	$CollisionPolygon2D.scale.x = 1 - 2 * int(get_global_mouse_position().x < global_position.x)
+	#$CollisionPolygon2D.scale.x = 1 - 2 * int(get_global_mouse_position().x < global_position.x)
+	$CollisionPolygon2D.scale.x = 1 - 2 * int(((global_position + Vector2(0, 1).rotated(rotation)).x - global_position.x)*(get_global_mouse_position().y - global_position.y) - ((global_position + Vector2(0, 1).rotated(rotation)).y - global_position.y)*(get_global_mouse_position().x - global_position.x) > 0)
 	
 	if not currentGun.infiniteReloads:
 		cam.get_node("AmmoDisplay/AmmoLabel").text = str(currentGun.ammoInMag) + "|" + str(currentGun.ammo)

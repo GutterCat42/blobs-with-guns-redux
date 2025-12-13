@@ -76,6 +76,9 @@ margin_right = 960.0
 margin_bottom = 540.0
 theme = ExtResource( 2 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="EarRingSound" type="AudioStreamPlayer" parent="HitVignette"]
 stream = ExtResource( 5 )
@@ -376,6 +379,16 @@ margin_top = 59.0
 margin_right = 155.0
 margin_bottom = 75.0
 text = "QUIT TO MENU"
+
+[node name="FPSLabel" type="Label" parent="."]
+margin_left = -557.0
+margin_top = -304.0
+margin_right = -517.0
+margin_bottom = -290.0
+text = "FPS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="PauseMenu/ButtonStack/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="PauseMenu/ButtonStack/RestartButton" to="." method="_on_RestartButton_pressed"]

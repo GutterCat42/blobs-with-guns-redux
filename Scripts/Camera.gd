@@ -81,6 +81,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	$FPSLabel.text = str(Engine.get_frames_per_second())
+	
 	if boss != null and is_instance_valid(get_node(boss)):
 		$Label.text = get_node(boss).name + "\n" + str(round(get_node(boss).hp))
 	
