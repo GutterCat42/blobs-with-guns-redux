@@ -29,3 +29,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder. (T
 * Add additional music
 * Fix bullet spawning bug in level 8
 * Properly removed the cut level 11
+* Changes to level 7 design

@@ -80,7 +80,7 @@ color_ramp = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-volume_db = 18.353
+volume_db = 10.488
 pitch_scale = 0.33
 autoplay = true
 bus = "SFX"

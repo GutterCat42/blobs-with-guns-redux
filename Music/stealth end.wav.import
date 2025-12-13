@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stealth end.wav-6df356b323e4a30fe5528d4d53f25f39.sample"
+
+[deps]
+
+source_file="res://Music/stealth end.wav"
+dest_files=[ "res://.import/stealth end.wav-6df356b323e4a30fe5528d4d53f25f39.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

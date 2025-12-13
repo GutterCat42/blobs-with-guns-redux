@@ -36,10 +36,13 @@ func switch_to(index):
 
 
 func levelDone():
+	get_parent().get_node("Music/Intro").stop()
+	get_parent().get_node("Music/Body").stop()
+	get_parent().get_node("Music/End").play()
 	$EndScreen.show()
 	$AmmoDisplay.hide()
 	$RadialInventory.hide()
-	get_tree().paused = true
+	#get_tree().paused = true
 	Globals.save_progress()
 
 
