@@ -17,8 +17,7 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.113725, 0.611765, 0.941176, 1 )
 config/icon="res://Theme/Blobs_guns_thumbnail.png"
-config/macos_native_icon="res://Theme/Blobs_guns_thumbnail.png"
-config/windows_native_icon="res://Theme/Blobs_guns_thumbnail.png"
+config/windows_native_icon="res://Theme/Blobs_guns_thumbnail.ico"
 
 [autoload]
 
@@ -28,8 +27,8 @@ Globals="*res://Scripts/Globals.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/resizable=false
 window/size/borderless=true
+window/size/fullscreen=true
 window/stretch/aspect="expand"
 
 [importer_defaults]
