@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Blobski's theme.mp3-534f7e9719805c68f3d998ce3b3a8239.mp3str"
+
+[deps]
+
+source_file="res://Assets/BWG Redux Soundtrack/MP3/Blobski's theme.mp3"
+dest_files=[ "res://.import/Blobski's theme.mp3-534f7e9719805c68f3d998ce3b3a8239.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

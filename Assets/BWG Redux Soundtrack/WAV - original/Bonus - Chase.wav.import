@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bonus - Chase.wav-59ab89ae31b7da5e058900f2c76e9113.sample"
+
+[deps]
+
+source_file="res://Assets/BWG Redux Soundtrack/WAV - original/Bonus - Chase.wav"
+dest_files=[ "res://.import/Bonus - Chase.wav-59ab89ae31b7da5e058900f2c76e9113.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

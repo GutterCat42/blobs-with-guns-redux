@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stealth.mp3-2a4147396044bc2eb5e9c9d980ece732.mp3str"
+
+[deps]
+
+source_file="res://Assets/BWG Redux Soundtrack/MP3/Stealth.mp3"
+dest_files=[ "res://.import/Stealth.mp3-2a4147396044bc2eb5e9c9d980ece732.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

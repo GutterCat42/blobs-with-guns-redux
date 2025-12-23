@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bonus - Chase.mp3-4a7a043ea75a6ee74e9697f5192c409f.mp3str"
+
+[deps]
+
+source_file="res://Assets/BWG Redux Soundtrack/MP3/Bonus - Chase.mp3"
+dest_files=[ "res://.import/Bonus - Chase.mp3-4a7a043ea75a6ee74e9697f5192c409f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

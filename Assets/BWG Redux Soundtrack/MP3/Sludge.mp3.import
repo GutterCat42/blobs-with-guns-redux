@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sludge.mp3-a485cf9ddd0584efe0b52ebb4b69a6fc.mp3str"
+
+[deps]
+
+source_file="res://Assets/BWG Redux Soundtrack/MP3/Sludge.mp3"
+dest_files=[ "res://.import/Sludge.mp3-a485cf9ddd0584efe0b52ebb4b69a6fc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
