@@ -45,6 +45,7 @@ stream = ExtResource( 10 )
 bus = "Music"
 
 [node name="End" type="AudioStreamPlayer" parent="Music"]
+pause_mode = 2
 stream = ExtResource( 11 )
 bus = "Music"
 

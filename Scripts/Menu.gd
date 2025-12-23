@@ -87,6 +87,7 @@ func _ready():
 	Engine.time_scale = 1
 	AudioServer.global_rate_scale = 1
 	AudioServer.set_bus_effect_enabled(2, 0, false)
+	AudioServer.get_bus_effect(0, 0).cutoff_hz = 10000
 	get_tree().paused = false
 	
 	Input.set_custom_mouse_cursor(null)

@@ -32,3 +32,5 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Fix sprite flipping when rotated (so bullets don't get stuck in walls)
 * Lower particle effects to help framerates
 * Ever so slightly improved level generation
+* Many small camera / HUD fixes
+* Update level end logic

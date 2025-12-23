@@ -32,7 +32,7 @@ func end():
 			if boss != null:
 				get_tree().change_scene("res://Scenes/Menu.tscn")
 			else:
-				if int(get_parent().name) == 11:
+				if int(get_parent().name) == 10:
 					get_tree().change_scene("res://Scenes/Menu.tscn")
 				else:
 					get_tree().change_scene("res://Scenes/Levels/" + str(int(get_parent().name) + 1) + ".tscn")

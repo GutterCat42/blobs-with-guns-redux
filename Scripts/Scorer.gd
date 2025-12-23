@@ -48,4 +48,4 @@ func _process(delta):
 		multiplierTimeLeft = multiplierTime
 	
 	if Globals.speedrunMode:
-		$Camera2D/SpeedrunTimer.text = get_time(time) + "\nTOTAL: " + get_time(Globals.totalTime + time)
+		$Camera2D/FixedHUD/SpeedrunTimer.text = get_time(time) + "\nTOTAL: " + get_time(Globals.totalTime + time)

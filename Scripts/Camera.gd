@@ -36,19 +36,20 @@ func switch_to(index):
 
 
 func levelDone():
-	get_parent().get_node("Music/Intro").stop()
-	get_parent().get_node("Music/Body").stop()
+	get_parent().get_node("Music/Intro").stream_paused = true
+	get_parent().get_node("Music/Body").stream_paused = true
 	get_parent().get_node("Music/End").play()
-	$EndScreen.show()
+	$FixedHUD/EndScreen.show()
 	$AmmoDisplay.hide()
 	$RadialInventory.hide()
 	#get_tree().paused = true
+	get_parent().get_node("PlayerBlob").set_physics_process(false)
 	Globals.save_progress()
 
 
 func deadScreen():
-	$DeadScreen/DeadVingette.rect_size = get_viewport().size
-	$DeadScreen.show()
+	$FixedHUD/DeadScreen/DeadVingette.rect_size = get_viewport().size
+	$FixedHUD/DeadScreen.show()
 	$AmmoDisplay.hide()
 	$RadialInventory.hide()
 	get_tree().paused = true
@@ -56,35 +57,50 @@ func deadScreen():
 
 
 func pause():
-	$PauseMenu.show()
+	$FixedHUD/PauseMenu.show()
 	$AmmoDisplay.hide()
 	$RadialInventory.hide()
 	get_tree().paused = true
 	Globals.save_progress()
+	#AudioServer.get_bus_effect(0, 0).cutoff_hz = 1000
+
+
+func alignUI(component, vertical:int = 0):
+	component.rect_position.x = (get_viewport().size.x - component.rect_size.x * component.rect_scale.x) / 2
+	if vertical == 0:
+		component.rect_position.y = (get_viewport().size.y - component.rect_size.y * component.rect_scale.y) / 2
+	else:
+		component.rect_position.y = get_viewport().size.y / vertical
 
 
 func _ready():
 	normalZoom = zoom
 	
 	if boss != null:
-		$Label.rect_position.x = -$Label.rect_size.x / 2
+		$BossHealthLayer/BossHealthLabel.rect_position.x = (get_viewport().size.x - $BossHealthLayer/BossHealthLabel.rect_size.x * $BossHealthLayer/BossHealthLabel.rect_scale.x) / 2
+		$BossHealthLayer/BossHealthLabel.rect_position.y = get_viewport().size.y / 6
 	
-	$SpeedrunTimer.visible = Globals.speedrunMode
+	$FixedHUD/SpeedrunTimer.visible = Globals.speedrunMode
+	alignUI($FixedHUD/SpeedrunTimer, 9)
 	
 	$RadialInventory/Panel.rect_size = get_viewport().size
 	$RadialInventory/Panel.rect_position = get_viewport().size / 2 - $RadialInventory/Panel.rect_size * $RadialInventory/Panel.rect_scale
 	
 	$HitVignette.rect_size = get_viewport().size
 	
+	alignUI($FixedHUD/PauseMenu)
+	alignUI($FixedHUD/EndScreen)
+	alignUI($FixedHUD/DeadScreen)
+	
 	AudioServer.set_bus_effect_enabled(2, 0, useReverb)
 	AudioServer.get_bus_effect(0, 0).cutoff_hz = 10000
 
 
 func _physics_process(delta):
-	#$FPSLabel.text = str(Engine.get_frames_per_second())
+	#$FixedHUD/FPSLabel.text = str(Engine.get_frames_per_second())
 	
 	if boss != null and is_instance_valid(get_node(boss)):
-		$Label.text = get_node(boss).name + "\n" + str(round(get_node(boss).hp))
+		$BossHealthLayer/BossHealthLabel.text = get_node(boss).name + "\nHP: " + str(round(get_node(boss).hp))
 	
 	if is_instance_valid(target):
 		if not sniperMode:
@@ -92,7 +108,8 @@ func _physics_process(delta):
 			$Tween.interpolate_property(self, "zoom", zoom, normalZoom, zoomSpeed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
 		else:
-			global_position = (target.global_position + get_global_mouse_position()) / 2
+			if not get_tree().paused:
+				global_position = (target.global_position + get_global_mouse_position()) / 2
 			$Tween.interpolate_property(self, "zoom", zoom, normalZoom * sniperZoomRatio, zoomSpeed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
 	
@@ -107,17 +124,16 @@ func _physics_process(delta):
 		$AmmoDisplay.rect_position = target.position - position
 		$RadialInventory.rect_position = target.position - position
 	
-	$SpeedrunTimer.rect_position.x = -$SpeedrunTimer.rect_size.x * $SpeedrunTimer.rect_scale.x / 2
-	
 	if $HitVignette.modulate.a > 0:
 		$HitVignette.modulate.a = lerp($HitVignette.modulate.a, 0, 0.005)
 		AudioServer.get_bus_effect(0, 0).cutoff_hz = lerp(AudioServer.get_bus_effect(0, 0).cutoff_hz, 10000, 0.005)
 
 
 func _on_ResumeButton_pressed():
-	$PauseMenu.hide()
+	$FixedHUD/PauseMenu.hide()
 	$AmmoDisplay.show()
 	get_tree().paused = false
+	#AudioServer.get_bus_effect(0, 0).cutoff_hz = 10000
 
 
 func _on_RestartButton_pressed():
