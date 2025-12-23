@@ -31,3 +31,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Changes to level 7 design
 * Fix sprite flipping when rotated (so bullets don't get stuck in walls)
 * Lower particle effects to help framerates
+* Ever so slightly improved level generation

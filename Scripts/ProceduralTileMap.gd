@@ -67,6 +67,10 @@ func _ready():
 	for i in range(0, numWalls):
 		create_wall(Vector2(rand_range(-size.x / 2, size.x / 2), rand_range(0, -size.y)))
 	
+	for x in range(-2, 3):
+		for y in range(-3, 0):
+			set_cell(x, y, -1)
+	
 	"""
 	for x in range(-size.x / 2, size.x / 2):
 		for y in range(-size.y / 2, size.y / 2):
