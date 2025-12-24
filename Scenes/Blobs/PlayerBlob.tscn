@@ -56,6 +56,9 @@ occluder = SubResource( 3 )
 [node name="AmmoOutTimer" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="GenocideReminderTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="body_entered" from="." to="." method="_on_PlayerBlob_body_entered"]
 [connection signal="area_entered" from="BulletTimeArea" to="." method="_on_BulletTimeArea_area_entered"]
 [connection signal="area_exited" from="BulletTimeArea" to="." method="_on_BulletTimeArea_area_exited"]
