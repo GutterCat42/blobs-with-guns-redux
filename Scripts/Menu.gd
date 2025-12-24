@@ -41,8 +41,13 @@ func go_to_level_num(targetLevel):
 
 func set_stats():
 	$StatsLabel.text = "STATS:\n\nTotal playtime: " + get_time(Globals.totalPlaytime) + "\nTotal trick score: " + str(Globals.totalTrickScore) + "\nTotal kills: " + str(Globals.totalKilled) + "\nTotal deaths: " + str(Globals.totalDeaths) + "\nKill-death ratio: " + get_kdr(Globals.totalKilled, Globals.totalDeaths)
+	
 	if Globals.totalDeaths > 0:
 		$StatsLabel.text +=  "\n(Approximately " + str(round(Globals.totalKilled / Globals.totalDeaths)) + "x more kills than deaths)"
+	
+	if Globals.speedrunRecord != 0:
+		$StatsLabel.text += "\n\nSpeedrun Record: " + get_time(Globals.speedrunRecord)
+	
 	$StatsLabel.rect_position = mid - $StatsLabel.rect_size * $StatsLabel.rect_scale / 2
 
 

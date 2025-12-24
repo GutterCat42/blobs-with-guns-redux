@@ -29,13 +29,13 @@ func end():
 	if Globals.speedrunMode:
 		if get_tree().get_nodes_in_group("Enemy").size() == 0:
 			Globals.totalTime += get_parent().time
-			if boss != null:
+			if int(get_parent().name) == 10:
 				get_tree().change_scene("res://Scenes/Menu.tscn")
+				if Globals.totalTime + get_parent().time < Globals.speedrunRecord:
+					Globals.speedrunRecord = Globals.totalTime + get_parent().time
+					Globals.save_progress()
 			else:
-				if int(get_parent().name) == 10:
-					get_tree().change_scene("res://Scenes/Menu.tscn")
-				else:
-					get_tree().change_scene("res://Scenes/Levels/" + str(int(get_parent().name) + 1) + ".tscn")
+				get_tree().change_scene("res://Scenes/Levels/" + str(int(get_parent().name) + 1) + ".tscn")
 		else:
 			get_parent().get_node("PlayerBlob").genocide_reminder()
 	else:

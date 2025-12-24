@@ -11,6 +11,7 @@ var totalTrickScore = 0
 var totalKilled = 0
 var totalDeaths = 0
 var totalPlaytime = 0
+var speedrunRecord = 0
 
 var speedrunMode = false
 var generateOptions = []
@@ -29,6 +30,7 @@ func save_progress():
 	f.store_var(totalKilled)
 	f.store_var(totalDeaths)
 	f.store_var(totalPlaytime)
+	f.store_var(speedrunRecord)
 	f.close()
 
 
@@ -45,6 +47,7 @@ func load_settings():
 		totalKilled = f.get_var()
 		totalDeaths = f.get_var()
 		totalPlaytime = f.get_var()
+		speedrunRecord = f.get_var()
 		f.close()
 
 

@@ -34,3 +34,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Ever so slightly improved level generation
 * Many small camera / HUD fixes
 * Update level end logic
+* Improvements and fixes to speedrun mode

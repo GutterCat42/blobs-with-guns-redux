@@ -81,7 +81,7 @@ func _ready():
 		$BossHealthLayer/BossHealthLabel.rect_position.y = get_viewport().size.y / 6
 	
 	$FixedHUD/SpeedrunTimer.visible = Globals.speedrunMode
-	alignUI($FixedHUD/SpeedrunTimer, 9)
+	alignUI($FixedHUD/SpeedrunTimer, 10)
 	
 	$RadialInventory/Panel.rect_size = get_viewport().size
 	$RadialInventory/Panel.rect_position = get_viewport().size / 2 - $RadialInventory/Panel.rect_size * $RadialInventory/Panel.rect_scale
@@ -100,7 +100,7 @@ func _physics_process(delta):
 	#$FixedHUD/FPSLabel.text = str(Engine.get_frames_per_second())
 	
 	if boss != null and is_instance_valid(get_node(boss)):
-		$BossHealthLayer/BossHealthLabel.text = get_node(boss).name + "\nHP: " + str(round(get_node(boss).hp))
+		$BossHealthLayer/BossHealthLabel.text = get_node(boss).name + ": " + str(round(get_node(boss).hp)) + " HP"
 	
 	if is_instance_valid(target):
 		if not sniperMode:

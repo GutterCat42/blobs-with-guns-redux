@@ -129,8 +129,6 @@ func get_hit(damage=1, sprayAngle=0, thingidontneed=Vector2.ZERO, otherthingidon
 	get_parent().multiplierTimeLeft = get_parent().multiplierTime
 	
 	if hp < 1:
-		if Globals.speedrunMode:
-			Globals.totalTime += get_parent().time
 		Globals.totalDeaths += 1
 		cam.deadScreen()
 
@@ -143,10 +141,10 @@ func genocide_reminder():
 
 
 func ammo_left():
-	var ammoLeft = true
+	var ammoLeft = false
 	for gun in guns:
-		if gun.ammo + gun.ammoInMag == 0:
-			ammoLeft = false
+		if gun.ammo + gun.ammoInMag > 0:
+			ammoLeft = true
 	
 	return ammoLeft
 
@@ -185,6 +183,8 @@ func _physics_process(_delta):
 	if not cam.get_node("RadialInventory").visible:
 		if Input.is_action_pressed("fire"):
 			currentGun.firing = true
+			if currentGun.reloading and not currentGun.get_node("AnimationPlayer").is_playing():
+				currentGun.reloading = false
 	
 	if Input.is_action_just_released("fire"):
 		currentGun.ready = true
