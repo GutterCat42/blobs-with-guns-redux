@@ -16,7 +16,7 @@
 
 [node name="LevelEnd" parent="." index="0"]
 position = Vector2( -75, 8 )
-boss = NodePath("../General Blobski")
+boss = NodePath("../BadBlob5")
 genocideMode = true
 
 [node name="Background" parent="." index="1"]

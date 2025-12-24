@@ -134,10 +134,12 @@ func get_hit(damage=1, sprayAngle=0, thingidontneed=Vector2.ZERO, otherthingidon
 
 
 func genocide_reminder():
-	var t = PopupText.instance()
-	get_parent().add_child(t)
-	t.global_transform = global_transform
-	t.get_node("Label").text = "You must kill all enemies!"
+	if $GenocideReminderTimer.time_left != 0:
+		var t = PopupText.instance()
+		get_parent().add_child(t)
+		t.global_transform = global_transform
+		t.get_node("Label").text = "You must kill all enemies!"
+		$GenocideReminderTimer.start()
 
 
 func ammo_left():

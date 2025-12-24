@@ -45,9 +45,6 @@ func set_stats():
 	if Globals.totalDeaths > 0:
 		$StatsLabel.text +=  "\n(Approximately " + str(round(Globals.totalKilled / Globals.totalDeaths)) + "x more kills than deaths)"
 	
-	if Globals.speedrunRecord != 0:
-		$StatsLabel.text += "\n\nSpeedrun Record: " + get_time(Globals.speedrunRecord)
-	
 	$StatsLabel.rect_position = mid - $StatsLabel.rect_size * $StatsLabel.rect_scale / 2
 
 

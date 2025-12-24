@@ -4,8 +4,12 @@ extends Area2D
 export(NodePath) var boss = null
 export(bool) var genocideMode = false
 
+var ended = false
+
 
 func end():
+	ended = true
+	
 	if get_parent().name != "ProceduralLevel":
 		if Globals.levelScores.size() > 0:
 			if int(get_parent().name) == Globals.unlockedLevel:
@@ -31,9 +35,6 @@ func end():
 			Globals.totalTime += get_parent().time
 			if int(get_parent().name) == 10:
 				get_tree().change_scene("res://Scenes/Menu.tscn")
-				if Globals.totalTime + get_parent().time < Globals.speedrunRecord:
-					Globals.speedrunRecord = Globals.totalTime + get_parent().time
-					Globals.save_progress()
 			else:
 				get_tree().change_scene("res://Scenes/Levels/" + str(int(get_parent().name) + 1) + ".tscn")
 		else:
@@ -51,10 +52,10 @@ func _process(delta):
 	if get_parent().get_node_or_null("PlayerBlob") == null:
 		get_tree().reload_current_scene()
 	
-	if boss != null:
-		if not is_instance_valid(get_node(boss)):
-			end()
-	
-	if genocideMode:
-		if get_tree().get_nodes_in_group("Enemy").size() == 0:
-			end()
+	if not ended:
+		if boss != null:
+			if not is_instance_valid(get_node(boss)):
+				end()
+		if genocideMode:
+			if get_tree().get_nodes_in_group("Enemy").size() == 0:
+				end()
