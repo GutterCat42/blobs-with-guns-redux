@@ -43,7 +43,7 @@ func set_stats():
 	$StatsLabel.text = "STATS:\n\nTotal playtime: " + get_time(Globals.totalPlaytime) + "\nTotal trick score: " + str(Globals.totalTrickScore) + "\nTotal kills: " + str(Globals.totalKilled) + "\nTotal deaths: " + str(Globals.totalDeaths) + "\nKill-death ratio: " + get_kdr(Globals.totalKilled, Globals.totalDeaths)
 	
 	if Globals.totalDeaths > 0:
-		$StatsLabel.text +=  "\n(Approximately " + str(stepify(Globals.totalKilled / Globals.totalDeaths, 1)) + "x more kills than deaths)"
+		$StatsLabel.text +=  "\n(Approximately " + str(stepify(float(Globals.totalKilled) / Globals.totalDeaths, 0.1)) + "x more kills than deaths)"
 	
 	$StatsLabel.rect_position = mid - $StatsLabel.rect_size * $StatsLabel.rect_scale / 2
 

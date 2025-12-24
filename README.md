@@ -4,7 +4,7 @@ It's my second game, Blobs with Guns, but with a drastic file size reduction and
 
 In short, this is the original game but finally somewhat optimised and cleaned up just a tad, making it the ideal way to experience the classic Blobs With Guns.
 
-This version uses Godot 3.4.2. Some things break when using newer versions so I've just kept it here.
+This version uses Godot 3.4.2. Some things break when using newer versions so be sure to keep it here.
 
 NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 

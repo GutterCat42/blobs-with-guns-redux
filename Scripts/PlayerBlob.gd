@@ -281,7 +281,7 @@ func _on_BulletTimeArea_area_exited(area):
 
 
 func _on_PlayerBlob_body_entered(body):
-	if body.is_in_group("CanSquash") and body.global_position.y < global_position.y - squashThresh:
+	if body.is_in_group("CanSquash") and body.global_position.y < global_position.y - squashThresh and body.velocity.length() > 1:
 		get_hit(2, deg2rad(-90), Vector2.ZERO)
 
 
