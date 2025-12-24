@@ -12,7 +12,7 @@ func end():
 	
 	if get_parent().name != "ProceduralLevel":
 		if Globals.levelScores.size() > 0:
-			if int(get_parent().name) == Globals.unlockedLevel:
+			if Globals.levelScores.size() == Globals.unlockedLevel:
 				Globals.levelScores.append(get_parent().score)
 				Globals.levelTimes.append(get_parent().time)
 			else:
@@ -24,12 +24,12 @@ func end():
 			Globals.levelScores.append(get_parent().score)
 			Globals.levelTimes.append(get_parent().time)
 		
-		
 		if int(get_parent().name) == Globals.unlockedLevel and int(get_parent().name) < 10:
 			Globals.unlockedLevel += 1
 			Globals.lastPlayed = Globals.unlockedLevel
 	
 	Globals.save_progress()
+	
 	if Globals.speedrunMode:
 		if get_tree().get_nodes_in_group("Enemy").size() == 0:
 			Globals.totalTime += get_parent().time

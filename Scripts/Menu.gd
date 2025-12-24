@@ -43,13 +43,13 @@ func set_stats():
 	$StatsLabel.text = "STATS:\n\nTotal playtime: " + get_time(Globals.totalPlaytime) + "\nTotal trick score: " + str(Globals.totalTrickScore) + "\nTotal kills: " + str(Globals.totalKilled) + "\nTotal deaths: " + str(Globals.totalDeaths) + "\nKill-death ratio: " + get_kdr(Globals.totalKilled, Globals.totalDeaths)
 	
 	if Globals.totalDeaths > 0:
-		$StatsLabel.text +=  "\n(Approximately " + str(round(Globals.totalKilled / Globals.totalDeaths)) + "x more kills than deaths)"
+		$StatsLabel.text +=  "\n(Approximately " + str(stepify(Globals.totalKilled / Globals.totalDeaths, 1)) + "x more kills than deaths)"
 	
 	$StatsLabel.rect_position = mid - $StatsLabel.rect_size * $StatsLabel.rect_scale / 2
 
 
 func set_button_text():
-	if selectedLevel != Globals.unlockedLevel and Globals.levelScores.size() > 0:
+	if ((selectedLevel != Globals.unlockedLevel) or (selectedLevel == 10)) and Globals.levelScores.size() > 0:
 		$LevelOptions/ScoreLabel.text = "Best score: " + str(Globals.levelScores[selectedLevel - 1])
 		$LevelOptions/TimeLabel.text = "Best time: " + str(stepify(Globals.levelTimes[selectedLevel - 1], 0.01))
 	else:
