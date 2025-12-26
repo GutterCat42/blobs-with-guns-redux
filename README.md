@@ -31,7 +31,7 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Changes to level 7 design
 * Fix sprite flipping when rotated (so bullets don't get stuck in walls)
 * Lower particle effects to help framerates
-* Ever so slightly improved level generation
+* Ever so slightly improved level generation and menu
 * Many small camera / HUD fixes
 * Update level end logic
 * Improvements and fixes to speedrun mode

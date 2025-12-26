@@ -99,9 +99,9 @@ func _process(_delta):
 	set_stats()
 	_on_Menu_resized()
 	if $GenerateOptions.visible and $GenerateOptions/PistolSelect.pressed and $GenerateOptions/UziSelect.pressed and $GenerateOptions/ShottySelect.pressed and $GenerateOptions/SilencedPistolSelect.pressed and $GenerateOptions/SniperSelect.pressed and $GenerateOptions/AssaultRifleSelect.pressed and $GenerateOptions/GrenadeLauncherSelect.pressed:
-		$DropHint.visible = true
+		$GenerateOptions/DropHint.visible = true
 	else:
-		$DropHint.visible = false
+		$GenerateOptions/DropHint.visible = false
 
 
 func _on_Menu_resized():
@@ -123,8 +123,6 @@ func _on_Menu_resized():
 	$CreditsLabel.rect_position = mid - $CreditsLabel.rect_size * $CreditsLabel.rect_scale / 2
 	$CreditsLabel.rect_position.y += 50
 	$StatsLabel.rect_position = mid - $StatsLabel.rect_size * $StatsLabel.rect_scale / 2
-	
-	$DropHint.rect_position = Vector2(mid.x + 150, mid.y + 200)
 
 
 func _on_PlayButton_pressed():
