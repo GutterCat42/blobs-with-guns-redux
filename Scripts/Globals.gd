@@ -2,6 +2,7 @@ extends Node
 
 
 export(String) var savePath = "user://blob-u2e.save"
+export(String) var newSavePath = "user://blob-redux.save"
 var unlockedLevel = 1
 var levelScores = []
 var levelTimes = []
@@ -17,9 +18,9 @@ var generateOptions = []
 var totalTime = null
 
 
-func save_progress():
+func save_progress(path=newSavePath):
 	var f = File.new()
-	f.open_encrypted_with_pass(savePath, File.WRITE, OS.get_unique_id())
+	f.open_encrypted_with_pass(path, File.WRITE, OS.get_unique_id())
 	f.store_var(unlockedLevel)
 	f.store_var(levelScores)
 	f.store_var(levelTimes)
@@ -32,10 +33,10 @@ func save_progress():
 	f.close()
 
 
-func load_settings():
+func load_settings(path=newSavePath):
 	var f = File.new()
-	if f.file_exists(savePath):
-		f.open_encrypted_with_pass(savePath, File.READ, OS.get_unique_id())
+	if f.file_exists(path):
+		f.open_encrypted_with_pass(path, File.READ, OS.get_unique_id())
 		unlockedLevel = f.get_var()
 		levelScores = f.get_var()
 		levelTimes = f.get_var()
@@ -49,7 +50,13 @@ func load_settings():
 
 
 func _ready():
-	load_settings()
+	var nf = File.new()
+	if not nf.file_exists(newSavePath):
+		load_settings(savePath)
+		save_progress(newSavePath)
+		nf.close()
+	else:
+		load_settings()
 	randomize()
 
 

@@ -1,6 +1,8 @@
 # Blobs With Guns: Redux
 
-It's my second game, Blobs with Guns, but with a drastic file size reduction and other minor updates to improve the experience. There are few new features added, and those that are added are very minor additions that were already half implemented in the original. Other quality-of-life refinements, some bug fixes, balancing, and visual/audio improvements have been made too, however not many code optimisations have been made. However, the experience is still closely aligned with the original.
+It's my second game, Blobs with Guns, but with a drastic file size reduction and other minor updates to improve the experience. There are few new features added, and those that are added are very minor additions that were already half implemented in the original. Other quality-of-life refinements, some bug fixes, balancing, and visual/audio improvements have been made too, however not many code optimisations have been made and no new levels etc have been added. The experience is still closely aligned with the original.
+
+This game creates it's own save file separate to that of the original game, however on first launch, if a save file from the old game's 'update 2' is detected, all data is copied into the new 'redux' save file. This process is basically invisible, but should allow old players to keep their stats etc (although if they were to go back to the original game, it will still load their old, pre-redux save).
 
 In short, this is the original game but finally somewhat optimised and cleaned up just a tad, making it the ideal way to experience the classic Blobs With Guns.
 
@@ -36,3 +38,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Update level end logic
 * Improvements and fixes to speedrun mode
 * Updates to level 5 design
+* Implement dedicated redux save file
