@@ -100,3 +100,8 @@ func _on_Bullet_area_entered(area):
 	if area.is_in_group("RicochetWalls") and not ricocheted:
 		rotation_degrees = ((((0) - (rotation_degrees)) - ((2) * (area.rotation_degrees))) + (180))
 		ricocheted = true
+
+
+func _on_Bullet_area_exited(area):
+	if area.is_in_group("RicochetWalls") and ricocheted:
+		ricocheted = false

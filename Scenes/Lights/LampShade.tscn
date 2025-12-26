@@ -21,8 +21,9 @@ frame = 1
 polygon = PoolVector2Array( 2, -1, 9, 6, 5, 11, -5, 11, -9, 6, -2, -1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -9, 189 )
+position = Vector2( -13, 283 )
 texture = ExtResource( 2 )
+texture_scale = 1.5
 energy = 1.5
 shadow_enabled = true
 shadow_gradient_length = 0.3
