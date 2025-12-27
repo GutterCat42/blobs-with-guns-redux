@@ -8,7 +8,7 @@ In short, this is the original game but finally somewhat optimised and cleaned u
 
 This version uses Godot 3.4.2. Some things break when using newer versions so be sure to keep it here.
 
-NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
+NOTE: The assets folder has been configured to be ignored by godot so it is not accessible from the editor or included in builds.
 
 
 ## Rough changelog
@@ -39,3 +39,4 @@ NOTE: when exporting from godot, be sure to exclude the entire Assets folder.
 * Improvements and fixes to speedrun mode
 * Updates to level 5 design
 * Implement dedicated redux save file
+* Lighting fixes

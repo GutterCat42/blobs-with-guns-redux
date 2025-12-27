@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LaserPointer.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/lampshape.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/linear double gradient.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/roundlight.png" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.984293 )
 colors = PoolColorArray( 1, 0, 0, 0.388235, 1, 0, 0, 0 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 0, 2, 0, -2, 2, -2, 2, 2 )
 
 [node name="LaserPointer" type="RayCast2D"]
 cast_to = Vector2( 600, 0 )
@@ -23,11 +26,9 @@ default_color = Color( 1, 1, 1, 1 )
 gradient = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-visible = false
-position = Vector2( 187, 1 )
-rotation = -1.5708
-scale = Vector2( 0.1, 1 )
+scale = Vector2( 0.585, 0.003 )
 texture = ExtResource( 2 )
+offset = Vector2( 514, 0 )
 color = Color( 1, 0, 0, 1 )
 energy = 2.0
 shadow_enabled = true
@@ -35,6 +36,9 @@ shadow_enabled = true
 [node name="DotLight" type="Light2D" parent="."]
 position = Vector2( 596, 0 )
 texture = ExtResource( 3 )
-texture_scale = 0.05
+texture_scale = 0.04
 color = Color( 1, 0, 0, 1 )
-shadow_enabled = true
+energy = 1.8
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="DotLight"]
+occluder = SubResource( 2 )

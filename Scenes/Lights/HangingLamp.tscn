@@ -45,3 +45,4 @@ softness = 5.0
 
 [node name="LampShade" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 42 )
+can_sleep = false

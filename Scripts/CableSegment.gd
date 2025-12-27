@@ -4,15 +4,16 @@ extends RigidBody2D
 export(float) var hp = 1
 
 
-func turn_lamp_off(name="LampShade"):
-	var lamp = get_parent().get_node_or_null(name)
+func turn_lamp_off():
+	var lamp = get_parent().get_node_or_null("LampShade")
 	if lamp:
 		lamp.turn_off()
 	else:
-		if name == "LightBulb":
-			return false
+		lamp = get_parent().get_node_or_null("Lightbulb")
+		if lamp:
+			lamp.turn_off()
 		else:
-			turn_lamp_off("LightBulb")
+			return false
 
 func get_hit(damage=1, a=1, b=2, c=3, d=4):
 	hp -= damage

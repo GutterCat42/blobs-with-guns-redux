@@ -6,6 +6,7 @@ colors = PoolColorArray( 0.954671, 0.339957, 0.0522086, 1, 0.893206, 0.557428, 0
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 position = Vector2( -1, 0.5 )
+emitting = false
 amount = 100
 speed_scale = 5.0
 explosiveness = 0.5

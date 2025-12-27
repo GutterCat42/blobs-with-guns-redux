@@ -55,7 +55,7 @@ position = Vector2( 769, 5 )
 position = Vector2( 0, -289 )
 
 [node name="HangingLamp2" parent="." index="13" instance=ExtResource( 4 )]
-position = Vector2( 448, -289 )
+position = Vector2( 448, -290 )
 
 [node name="HangingLamp3" parent="." index="14" instance=ExtResource( 4 )]
-position = Vector2( 768, -289 )
+position = Vector2( 769, -289 )

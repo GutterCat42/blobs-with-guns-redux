@@ -17,8 +17,8 @@ func get_hit(damage=1, sprayAngle=0, thingidontneed=Vector2.ZERO, otherthingidon
 	
 	if hp <= 0:
 		turn_off()
-		$Sprite.modulate = hitColour
 
 
 func turn_off():
 	$Light2D.enabled = false
+	$Sprite.modulate = hitColour

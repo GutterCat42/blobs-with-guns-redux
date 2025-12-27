@@ -139,9 +139,9 @@ wait_time = 0.05
 
 [node name="Light2D" type="Light2D" parent="AnimNode/Sprite/BarrelEnd/MuzzleFlash"]
 texture = ExtResource( 4 )
-texture_scale = 2.0
+texture_scale = 3.0
 color = Color( 1, 0.560784, 0, 1 )
-energy = 2.5
+energy = 3.0
 shadow_enabled = true
 shadow_gradient_length = 0.5
 
