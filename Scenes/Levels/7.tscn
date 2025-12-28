@@ -58,7 +58,7 @@ Gun = ExtResource( 4 )
 
 [node name="BadBlob2" parent="." index="11" instance=ExtResource( 3 )]
 position = Vector2( 403, 488 )
-Gun = ExtResource( 2 )
+Gun = ExtResource( 4 )
 
 [node name="BadBlob3" parent="." index="12" instance=ExtResource( 3 )]
 position = Vector2( 525, 488 )

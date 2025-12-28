@@ -16,7 +16,7 @@ In short, this is the original game but finally somewhat optimised and cleaned u
 
 * Reorganised some folders
 * Remove unused files
-* Exclude asset creation files from export
+* Exclude asset creation files from project
 * Rewrote credits screen
 * Changed some particles
 * Reloading logic fixes
