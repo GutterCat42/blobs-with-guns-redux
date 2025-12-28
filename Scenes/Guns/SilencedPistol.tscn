@@ -20,9 +20,6 @@ position = Vector2( -2, 0 )
 [node name="BarrelEnd" parent="AnimNode/Sprite" index="1"]
 position = Vector2( 7, -2 )
 
-[node name="Light2D" parent="AnimNode/Sprite/BarrelEnd/MuzzleFlash" index="1"]
-texture_scale = 3.0
-
 [node name="ShellPoint" parent="AnimNode/Sprite" index="2"]
 position = Vector2( -4, -3 )
 

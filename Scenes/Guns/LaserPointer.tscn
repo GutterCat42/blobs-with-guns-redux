@@ -9,7 +9,7 @@ offsets = PoolRealArray( 0, 0.984293 )
 colors = PoolColorArray( 1, 0, 0, 0.388235, 1, 0, 0, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 0, 2, 0, -2, 2, -2, 2, 2 )
+polygon = PoolVector2Array( 0, 3, 0, -3, 2, -3, 2, 3 )
 
 [node name="LaserPointer" type="RayCast2D"]
 cast_to = Vector2( 600, 0 )
@@ -26,11 +26,11 @@ default_color = Color( 1, 1, 1, 1 )
 gradient = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 0.585, 0.003 )
+scale = Vector2( 0.585, 0.01 )
 texture = ExtResource( 2 )
 offset = Vector2( 514, 0 )
-color = Color( 1, 0, 0, 1 )
-energy = 2.0
+color = Color( 0.788235, 0, 0, 1 )
+energy = 1.5
 shadow_enabled = true
 
 [node name="DotLight" type="Light2D" parent="."]

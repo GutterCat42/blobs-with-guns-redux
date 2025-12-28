@@ -6,9 +6,10 @@ This game creates it's own save file separate to that of the original game, howe
 
 In short, this is the original game but finally somewhat optimised and cleaned up just a tad, making it the ideal way to experience the classic Blobs With Guns.
 
-This version uses Godot 3.4.2. Some things break when using newer versions so be sure to keep it here.
+**IMPORTANT NOTE:** This version uses **Godot 3.5.3!** For whatever reason, things break when using older or newer versions so be sure to keep it here. The game uses the GLES3 renderer for some lighting effects however is configured to fallback to GLES2 if necessary (this will break some of the lighting but should still be playable).
 
-NOTE: The assets folder has been configured to be ignored by godot so it is not accessible from the editor or included in builds.
+**ANOTHER NOTE:** The assets folder has been configured to be ignored by godot so it is not accessible from the editor or included in builds.
+
 
 
 ## Rough changelog
@@ -39,4 +40,5 @@ NOTE: The assets folder has been configured to be ignored by godot so it is not 
 * Improvements and fixes to speedrun mode
 * Updates to level 5 design
 * Implement dedicated redux save file
-* Lighting fixes
+* Lighting fixes and switch to GLES3
+* Changes to level 8 design
