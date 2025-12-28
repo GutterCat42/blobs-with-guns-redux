@@ -173,6 +173,7 @@ func fire():
 func _ready():
 	$FiringTimer.wait_time = 1 / rps
 	#$Sprite/BarrelEnd/MuzzleFlash/MuzzleFlashTimer.wait_time = 0.5 / rps
+	$AnimNode/Sprite/BarrelEnd/MuzzleFlash/Light2D.visible = !Globals.reduceFlash
 
 
 func _physics_process(delta):

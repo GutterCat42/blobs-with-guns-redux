@@ -11,6 +11,11 @@ var time = 0
 var flickers = 0
 
 
+func _ready():
+	if Globals.reduceFlash:
+		flickerTimes = 0
+
+
 func _process(delta):
 	if flickers < flickerTimes + 1:
 		time += delta + rand_range(0, randomness)

@@ -86,6 +86,11 @@ func _ready():
 	$GenerateOptions/ThemeSelect.add_item("Facility")
 	$GenerateOptions/ThemeSelect.selected = 1
 	
+	$Options/MusicContainer/MusicSlider.value = Globals.musicVolume
+	$Options/EffectsContainer/EffectsSlider.value = Globals.effectsVolume
+	$Options/ReduceFlashButton.pressed = Globals.reduceFlash
+	$Options/ReduceShakeButton.pressed = Globals.reduceShake
+	
 	Engine.time_scale = 1
 	AudioServer.global_rate_scale = 1
 	AudioServer.set_bus_effect_enabled(2, 0, false)
@@ -119,6 +124,8 @@ func _on_Menu_resized():
 	
 	$GenerateOptions.rect_position = mid - $GenerateOptions.rect_size * $GenerateOptions.rect_scale / 2
 	$ConfirmGenerateButton.rect_position = Vector2(mid.x - $ConfirmGenerateButton.rect_size.x * $ConfirmGenerateButton.rect_scale.x / 2, $GenerateOptions.rect_position.y + $GenerateOptions.rect_size.y * $GenerateOptions.rect_scale.y)
+	
+	$Options.rect_position = mid - $Options.rect_size * $Options.rect_scale / 2
 	
 	$CreditsLabel.rect_position = mid - $CreditsLabel.rect_size * $CreditsLabel.rect_scale / 2
 	$CreditsLabel.rect_position.y += 50
@@ -181,6 +188,14 @@ func _on_MainButton_pressed():
 	$ConfirmGenerateButton.hide()
 	$CreditsLabel.hide()
 	$StatsLabel.hide()
+	$Options.hide()
+	
+	Globals.musicVolume = AudioServer.get_bus_volume_db(1)
+	Globals.effectsVolume = AudioServer.get_bus_volume_db(2)
+	Globals.reduceFlash = $Options/ReduceFlashButton.pressed
+	Globals.reduceShake = $Options/ReduceShakeButton.pressed
+	Globals.save_progress()
+	
 	$VersionLabel.show()
 
 
@@ -225,3 +240,33 @@ func _on_StatsButton_pressed():
 
 func _on_MenuIntro_finished():
 	$MenuLoop.play()
+
+
+func _on_OptionsButton_pressed():
+	$MenuStack.hide()
+	$Options.show()
+	$MainButton.show()
+
+
+func _on_MusicSlider_value_changed(value):
+	if value == -42:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
+	AudioServer.set_bus_volume_db(1, value)
+
+
+func _on_EffectsSlider_value_changed(value):
+	if value == -42:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
+	AudioServer.set_bus_volume_db(2, value)
+
+
+func _on_ReduceFlashButton_toggled(button_pressed):
+	Globals.reduceFlash = button_pressed
+
+
+func _on_ReduceShakeButton_toggled(button_pressed):
+	Globals.reduceShake = button_pressed

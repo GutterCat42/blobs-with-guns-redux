@@ -8,6 +8,8 @@ var kills = 0
 
 
 func _ready():
+	$Light2D.visible = !Globals.reduceFlash
+	
 	$CPUParticles2D.emitting = true
 	
 	var n = Noise.instance()

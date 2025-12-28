@@ -21,8 +21,9 @@ var ammoNormalX
 
 
 func shake(strength=defaultStrength, weight=defaultLerpWeight):
-	intensity = strength
-	lerpWeight = weight
+	if !Globals.reduceShake:
+		intensity = strength
+		lerpWeight = weight
 
 
 func show_hitvignette(damage):
