@@ -86,6 +86,13 @@ func _ready():
 	$GenerateOptions/ThemeSelect.add_item("Facility")
 	$GenerateOptions/ThemeSelect.selected = 1
 	
+	$GenerateOptions/MusicSelect.add_item("Menu theme")
+	$GenerateOptions/MusicSelect.add_item("Main theme")
+	$GenerateOptions/MusicSelect.add_item("Stealth")
+	$GenerateOptions/MusicSelect.add_item("Sludge")
+	$GenerateOptions/MusicSelect.add_item("Blobski's theme")
+	$GenerateOptions/MusicSelect.selected = 1
+	
 	$Options/MusicContainer/MusicSlider.value = Globals.musicVolume
 	$Options/EffectsContainer/EffectsSlider.value = Globals.effectsVolume
 	$Options/ReduceFlashButton.pressed = Globals.reduceFlash
@@ -227,7 +234,7 @@ func _on_ConfirmGenerateButton_pressed():
 							   $GenerateOptions/WidthSelect.value, $GenerateOptions/HeightSelect.value,
 							   $GenerateOptions/PlatformsSelect.value, $GenerateOptions/MinWidthSelect.value, $GenerateOptions/MaxWidthSelect.value,
 							   $GenerateOptions/WallsSelect.value, $GenerateOptions/EnemiesSelect.value,
-							   allowedGuns]
+							   allowedGuns, $GenerateOptions/MusicSelect.selected]
 	
 	if get_tree().change_scene("res://Scenes/Levels/ProceduralLevel.tscn") != OK: print("Error when changing to procedural level scene!")
 

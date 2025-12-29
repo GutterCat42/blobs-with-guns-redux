@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/menu loop.wav-a703d30ed44eacd00da5b480cc1f7dbe.sample"
+path="res://.import/blobski short loop.wav-10f1bcd70b0b4e54c605e0048657361d.sample"
 
 [deps]
 
-source_file="res://Music/menu loop.wav"
-dest_files=[ "res://.import/menu loop.wav-a703d30ed44eacd00da5b480cc1f7dbe.sample" ]
+source_file="res://Music/blobski short loop.wav"
+dest_files=[ "res://.import/blobski short loop.wav-10f1bcd70b0b4e54c605e0048657361d.sample" ]
 
 [params]
 

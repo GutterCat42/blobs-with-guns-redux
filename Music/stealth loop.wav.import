@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/menu loop.wav-a703d30ed44eacd00da5b480cc1f7dbe.sample"
+path="res://.import/stealth loop.wav-df7eb6d2014c7958879a6686cb201cd8.sample"
 
 [deps]
 
-source_file="res://Music/menu loop.wav"
-dest_files=[ "res://.import/menu loop.wav-a703d30ed44eacd00da5b480cc1f7dbe.sample" ]
+source_file="res://Music/stealth loop.wav"
+dest_files=[ "res://.import/stealth loop.wav-df7eb6d2014c7958879a6686cb201cd8.sample" ]
 
 [params]
 
