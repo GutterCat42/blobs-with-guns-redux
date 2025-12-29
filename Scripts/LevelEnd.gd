@@ -39,6 +39,7 @@ func end():
 				get_tree().change_scene("res://Scenes/Levels/" + str(int(get_parent().name) + 1) + ".tscn")
 		else:
 			get_parent().get_node("PlayerBlob").genocide_reminder()
+			ended = false
 	else:
 		get_parent().get_node("Camera2D").levelDone()
 
