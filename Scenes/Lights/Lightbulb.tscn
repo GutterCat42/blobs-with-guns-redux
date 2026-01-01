@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/lampshape.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/lights.png" type="Texture" id=3]
 
-[node name="Lightbulb" type="RigidBody2D" groups=["CanSquash", "Hitable"]]
+[node name="Lightbulb" type="RigidBody2D" groups=["CanSquash", "Hitable", "Light"]]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -280,11 +280,6 @@ func _on_BulletTimeArea_area_exited(area):
 			do_trick("Dodge", 100)
 
 
-func _on_PlayerBlob_body_entered(body):
-	if body.is_in_group("CanSquash") and body.global_position.y < global_position.y - squashThresh and body.linear_velocity.length() > 100:
-		get_hit(2, deg2rad(-90), Vector2.ZERO)
-
-
 func _on_AmmoOutTimer_timeout():
 	if not ammo_left():
 		cam.deadScreen()

@@ -44,3 +44,4 @@ In short, this is the original game but finally somewhat optimised and cleaned u
 * Changes to level 8 design
 * Add accessibility options
 * Add options to select soundtrack in generated level
+* Fix colliding with lights killing player
