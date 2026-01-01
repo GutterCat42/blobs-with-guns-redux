@@ -8,7 +8,7 @@ fullAuto = true
 rps = 11.0
 bulletDamage = 1.4
 bulletInaccuracy = 1.0
-bulletRange = 500.0
+bulletRange = 700.0
 magSize = 30
 ammo = 60
 
