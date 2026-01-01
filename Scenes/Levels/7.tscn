@@ -60,31 +60,27 @@ Gun = ExtResource( 4 )
 position = Vector2( 403, 488 )
 Gun = ExtResource( 4 )
 
-[node name="BadBlob3" parent="." index="12" instance=ExtResource( 3 )]
-position = Vector2( 525, 488 )
-Gun = ExtResource( 2 )
-
-[node name="BadBlob4" parent="." index="13" instance=ExtResource( 3 )]
+[node name="BadBlob4" parent="." index="12" instance=ExtResource( 3 )]
 position = Vector2( 645, 486 )
 Gun = ExtResource( 2 )
 
-[node name="BadBlob8" parent="." index="14" instance=ExtResource( 3 )]
+[node name="BadBlob8" parent="." index="13" instance=ExtResource( 3 )]
 position = Vector2( 777, 496 )
 Gun = ExtResource( 2 )
 
-[node name="BadBlob5" parent="." index="15" instance=ExtResource( 3 )]
+[node name="BadBlob5" parent="." index="14" instance=ExtResource( 3 )]
 position = Vector2( 303, 142 )
 Gun = ExtResource( 5 )
 
-[node name="BadBlob6" parent="." index="16" instance=ExtResource( 3 )]
+[node name="BadBlob6" parent="." index="15" instance=ExtResource( 3 )]
 position = Vector2( 880, 144 )
 Gun = ExtResource( 5 )
 
-[node name="BadBlob7" parent="." index="17" instance=ExtResource( 3 )]
+[node name="BadBlob7" parent="." index="16" instance=ExtResource( 3 )]
 position = Vector2( 962, 488 )
 Gun = ExtResource( 5 )
 
-[node name="HintLabel" parent="." index="18" instance=ExtResource( 7 )]
+[node name="HintLabel" parent="." index="17" instance=ExtResource( 7 )]
 margin_left = 239.0
 margin_top = 55.0
 margin_right = 558.0
@@ -101,14 +97,14 @@ stream = ExtResource( 11 )
 [node name="End" parent="Music" index="2"]
 stream = ExtResource( 9 )
 
-[node name="BadBlob10" parent="." index="20" instance=ExtResource( 3 )]
+[node name="BadBlob10" parent="." index="19" instance=ExtResource( 3 )]
 position = Vector2( 590, 176 )
 Gun = ExtResource( 5 )
 
-[node name="BadBlob11" parent="." index="21" instance=ExtResource( 3 )]
+[node name="BadBlob11" parent="." index="20" instance=ExtResource( 3 )]
 position = Vector2( 382, 304 )
 Gun = ExtResource( 2 )
 
-[node name="BadBlob12" parent="." index="22" instance=ExtResource( 3 )]
+[node name="BadBlob12" parent="." index="21" instance=ExtResource( 3 )]
 position = Vector2( 767, 307 )
 Gun = ExtResource( 2 )

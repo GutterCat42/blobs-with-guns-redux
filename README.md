@@ -1,6 +1,6 @@
 # Blobs With Guns: Redux
 
-It's my second game, Blobs with Guns, but with a drastic file size reduction and other minor updates to improve the experience. There are few new features added, and those that are added are very minor additions that were already half implemented in the original. Other quality-of-life refinements, accessibility options, some bug fixes, balancing, level edits, and visual/audio improvements have been made too, however not many code optimisations have been made and no new levels etc have been added. The experience is still closely aligned with the original.
+It's my second game, Blobs with Guns, but with a drastic file size reduction and other minor updates to improve the experience. There are few new features added, and those that are added are very minor additions that were already half implemented in the original. Other quality-of-life refinements, accessibility options, some bug fixes, balancing, level edits, new music, and visual/audio improvements have been made too, however not many code optimisations have been made and no new levels etc have been added. The experience is still closely aligned with the original.
 
 This game creates it's own save file separate to that of the original game, however on first launch, if a save file from the old game's 'update 2' is detected, all data is copied into the new 'redux' save file. This process is basically invisible, but should allow old players to keep their stats etc (although if they were to go back to the original game, it will still load their old, pre-redux save). Game options are saved in a separate, unencrypted file.
 
@@ -12,13 +12,13 @@ In short, this is the original game but finally somewhat optimised and cleaned u
 
 
 
-## Rough changelog
+## Rough changelog in a vaguely chronological order
 
 * Reorganised some folders
 * Remove unused files
 * Exclude asset creation files from project
 * Rewrote credits screen
-* Changed some particles
+* Changed some particle effects
 * Reloading logic fixes
 * Audio fixes
 * Add reverb effect for indoor levels
