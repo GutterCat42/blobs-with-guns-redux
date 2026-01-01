@@ -354,6 +354,7 @@ __meta__ = {
 
 [node name="EarRingSound" type="AudioStreamPlayer" parent="HitVignette"]
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [node name="RadialInventory" type="Control" parent="."]
 visible = false
